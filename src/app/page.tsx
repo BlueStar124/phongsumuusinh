@@ -3,6 +3,7 @@ import { ShareButton, StoryHeader } from "@/components/StoryControls";
 import { SiteLogo } from "@/components/SiteLogo";
 import { StoryPhoto } from "@/components/StoryPhoto";
 import { StoryFilm } from "@/components/StoryFilm";
+import { StoryAudio } from "@/components/StoryAudio";
 import { photos, story } from "@/lib/story";
 
 export default function HomePage() {
@@ -11,7 +12,7 @@ export default function HomePage() {
     <main id="dau-trang">
       <section className="hero" aria-labelledby="story-title">
         <div className="hero-copy"><div className="hero-kicker"><span className="small-dot" /> PHÓNG SỰ ĐỜI SỐNG <span className="kicker-line" /></div><p className="hero-location"><MapPin size={13} /> SÀI GÒN · VIỆT NAM</p><h1 id="story-title">Vị<br className="hero-title-break" />{" "}<em>mưu sinh</em><span className="title-period">.</span></h1><div className="hero-subtitle"><span className="subtitle-line" /><h2>Bình dị một góc đường,<br />bền bỉ một hành trình.</h2></div><p className="hero-description">{story.introduction}</p><div className="hero-bottom"><a href="#noi-dung" className="read-link"><span className="circle-arrow"><ArrowDown size={17} /></span> CHẬM LẠI ĐỂ ĐỌC</a><span className="hero-credit">BÀI & ẢNH<span>Lê Thị Thu Hiệp</span></span></div></div>
-        <div className="hero-visual"><StoryPhoto index={0} caption={false} priority className="hero-photo" /><span className="hero-photo-label">NHỮNG CÂU CHUYỆN TỪ GÓC PHỐ</span><span className="hero-photo-number">01 / 05</span></div>
+        <div className="hero-visual"><StoryPhoto index={0} caption={false} priority className="hero-photo" /><StoryAudio /><span className="hero-photo-number">01 / 05</span></div>
       </section>
 
       <div className="story-ribbon"><span>MỘT GÓC SÀI GÒN</span><span className="ribbon-words">Mùi khoai nóng. Đôi tay cần mẫn. Một nhịp sống bình dị.</span><SiteLogo className="ribbon-logo" /></div>

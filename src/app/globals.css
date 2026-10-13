@@ -101,9 +101,22 @@ svg { flex-shrink: 0; }
 .hero-photo .photo-open, .hero-photo img { height: 100%; width: 100%; }
 .hero-photo img { object-fit: cover; object-position: 50% 42%; }
 .hero-visual::after { content: ""; position: absolute; inset: 18px; border: 1px solid #ffffff65; pointer-events: none; }
-.hero-photo-label { position: absolute; bottom: 36px; left: 36px; font-size: 9px; letter-spacing: .15em; color: #fff; text-shadow: 0 1px 6px #000; pointer-events: none; }
 .hero-photo-number { position: absolute; top: 34px; right: 35px; color: white; font-size: 10px; letter-spacing: .12em; text-shadow: 0 1px 6px #000; pointer-events: none; }
-.hero-photo .photo-expand { bottom: 32px; right: 32px; }
+.hero-photo .photo-expand { display: none; }
+.hero-audio { position: absolute; z-index: 2; bottom: 24px; left: 24px; right: 24px; display: grid; grid-template-columns: 36px minmax(0, 1fr) 30px; align-items: center; gap: 10px; padding: 12px; border: 1px solid #fff8; border-radius: 8px; background: #f6f2e9f2; backdrop-filter: blur(12px); box-shadow: 0 3px 18px #30213326; color: var(--plum); }
+.hero-audio audio { display: none; }
+.audio-play { display: grid; place-items: center; width: 36px; height: 36px; border-radius: 50%; background: var(--plum); color: var(--paper); }
+.audio-play:hover { background: #724968; }
+.audio-body { min-width: 0; }
+.audio-topline { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 6px; }
+.audio-title { display: inline-flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 600; white-space: nowrap; }
+.audio-time { color: var(--muted); font-size: 10px; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.audio-seek { display: block; width: 100%; height: 12px; margin: 0; accent-color: var(--plum); cursor: pointer; }
+.audio-seek:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+.audio-seek:disabled { cursor: default; }
+.audio-rate { padding: 8px 0; min-height: 36px; background: transparent; color: var(--plum); font-size: 11px; font-weight: 600; }
+.audio-error { grid-column: 1 / -1; font-size: 11px; line-height: 1.7; margin: 0; }
+.audio-error a { text-decoration: underline; }
 .story-ribbon { border-block: 1px solid var(--line); display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 22px 5%; max-width: 1440px; margin: auto; }
 .story-ribbon > span:first-child { font-size: 9px; letter-spacing: .17em; color: var(--plum); font-weight: 600; }
 .ribbon-words { font-family: var(--serif); font-style: italic; color: #797063; font-size: 16px; }
@@ -238,7 +251,6 @@ footer p { color: #807365; font-family: var(--serif); font-size: 13px; margin: 1
   .hero-credit { font-size: 7px; }
   .hero-credit span { font-size: 13px; }
   .hero-kicker { font-size: 8px; }
-  .hero-photo-label { font-size: 7px; left: 27px; }
   .story-ribbon { padding-inline: 24px; }
   .ribbon-words { font-size: 13px; }
   .editorial-layout { display: block; max-width: 760px; padding-inline: 32px; }
@@ -281,9 +293,8 @@ footer p { color: #807365; font-family: var(--serif); font-size: 13px; margin: 1
   .hero-visual { height: 470px; }
   .hero-photo img { object-position: center 48%; }
   .hero-visual::after { inset: 14px; }
-  .hero-photo-label { left: 27px; bottom: 28px; font-size: 8px; }
   .hero-photo-number { top: 28px; right: 28px; }
-  .hero-photo .photo-expand { bottom: 23px; right: 24px; }
+  .hero-audio { bottom: 18px; left: 18px; right: 18px; }
   .story-ribbon { padding: 18px 24px; gap: 14px; }
   .story-ribbon > span:first-child { font-size: 8px; white-space: nowrap; }
   .ribbon-words { font-size: 12px; line-height: 1.55; }
@@ -352,6 +363,9 @@ footer p { color: #807365; font-family: var(--serif); font-size: 13px; margin: 1
   .lightbox-prev, .lightbox-next { width: 36px; height: 36px; }
 }
 @media (max-width: 360px) {
+  .hero-audio { left: 14px; right: 14px; }
+  .audio-title { font-size: 10px; gap: 4px; }
+  .audio-time { font-size: 9px; }
   .film-meta { font-size: 9px; }
   .film-actions .text-link { font-size: 10px; }
   .hero-copy, .editorial-layout, .closing-layout, .gallery-section { padding-inline: 20px; }

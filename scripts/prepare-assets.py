@@ -38,3 +38,12 @@ subprocess.run([
   "-frames:v", "1", "-vf", "scale=720:-2", str(TARGET / "video-poster.jpg"),
 ], check=True)
 print("Prepared all 5 photographs, video, poster and original article.")
+
+audio_source = SOURCE / "AUDIO" / "Audio.mov"
+if audio_source.exists():
+  subprocess.run([
+    ffmpeg, "-hide_banner", "-loglevel", "error", "-y",
+    "-i", str(audio_source), "-map", "0:a:0", "-vn", "-c:a", "copy",
+    "-movflags", "+faststart", str(TARGET / "audio-phong-su.m4a"),
+  ], check=True)
+  print("Prepared narration audio without re-encoding.")

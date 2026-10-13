@@ -37,6 +37,7 @@ Khi triển khai, đặt biến môi trường `SITE_URL` thành địa chỉ we
 - `src/app/page.tsx`: bố cục trang.
 - `src/app/globals.css`: màu sắc, font, giao diện desktop/mobile.
 - `public/assets/`: ảnh WebP, phim MP4 H.264 720p, ảnh bìa phim và bài WPS gốc để tải.
+- `public/assets/audio-phong-su.m4a`: bản nghe 2 phút 38 giây, tách từ `AUDIO/Audio.mov` và giữ nguyên luồng AAC. Thanh nghe nằm dưới ảnh mở đầu, có phát/dừng, tua và đổi tốc độ; không tự phát. Audio và phim tự tạm dừng nhau để tránh phát chồng tiếng.
 - `public/fonts/`: font Lora hỗ trợ tiếng Việt, phục vụ cục bộ; kèm giấy phép OFL.
 - `docs/research/source-text.txt`: văn bản trích từ WPS để đối chiếu.
 
